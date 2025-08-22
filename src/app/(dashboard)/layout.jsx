@@ -14,12 +14,12 @@ export default function Layout({ children }) {
                     } bg-white shadow-md transition-all duration-300`}
             >
                 <div className="flex items-center justify-between px-4 py-4 border-b">
-                    <h1
+                    <Link href={"/"}>                    <h1
                         className={`${isOpen ? "block" : "hidden"
                             } text-xl font-bold text-gray-800`}
                     >
                         MyShop Admin
-                    </h1>
+                    </h1></Link>
                     <button
                         onClick={() => setIsOpen(!isOpen)}
                         className="text-gray-600 focus:outline-none"
@@ -37,7 +37,7 @@ export default function Layout({ children }) {
                         <Link href={"/user-dashboard/add-product"}>
                             <li className="flex items-center px-4 py-2 hover:bg-gray-200 cursor-pointer">
                                 <BarChart className="w-5 h-5 text-gray-600" />
-                                {isOpen && <span className="ml-3 text-gray-700">Analytics</span>}
+                                {isOpen && <span className="ml-3 text-gray-700">Add Product</span>}
                             </li>
                         </Link>
                         <li className="flex items-center px-4 py-2 hover:bg-gray-200 cursor-pointer">

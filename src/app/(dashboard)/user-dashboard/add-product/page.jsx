@@ -1,6 +1,7 @@
 "use client";
 import axios from "axios";
 import { useState } from "react";
+import Swal from "sweetalert2";
 
 const AddProduct = () => {
 
@@ -9,13 +10,21 @@ const AddProduct = () => {
         e.preventDefault();
         const form = e.target;
         const fromData = new FormData(form);
-        const { name, price, stock, image } = Object.fromEntries(fromData.entries());
+        const { name, price, stock, image, description } = Object.fromEntries(fromData.entries());
         const Product = {
-            name, price, stock, image
+            name, price, stock, image, description
         };
         console.log(Product)
         const res = await axios.post("http://localhost:5000/product", Product);
-        console.log(res.data)
+        console.log(res.data.insertedId)
+        if (res.data.insertedId) {
+            Swal.fire({
+                icon: "success",
+                title: "Your Product has been saved",
+                showConfirmButton: false,
+                timer: 1500
+            });
+        }
 
     };
 
