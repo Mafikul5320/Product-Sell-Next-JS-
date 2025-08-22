@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 async function getProducts() {
-  const res = await fetch("http://localhost:5000/product", {
+  const res = await fetch("https://buy-sell-server-one.vercel.app/product", {
     cache: "no-store", 
   });
 

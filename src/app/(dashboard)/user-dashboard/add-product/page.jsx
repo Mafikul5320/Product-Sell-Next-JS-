@@ -15,7 +15,7 @@ const AddProduct = () => {
             name, price, stock, image, description
         };
         console.log(Product)
-        const res = await axios.post("http://localhost:5000/product", Product);
+        const res = await axios.post("https://buy-sell-server-one.vercel.app/product", Product);
         console.log(res.data.insertedId)
         if (res.data.insertedId) {
             Swal.fire({
