@@ -9,7 +9,7 @@ export default function page() {
         const form = e.target;
         const fromData = new FormData(form);
         const { name, email, password } = Object.fromEntries(fromData.entries());
-        const data = { name, email, password };
+        const data = { name, email, password, role: "user" };
         const res = await axios.post("http://localhost:5000/user", data)
         console.log(res.data.insertedId)
         if (res.data.insertedId) {

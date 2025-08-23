@@ -15,15 +15,17 @@ export const authOption = {
                 const { email, password } = credentials;
                 const res = await axios.get(`http://localhost:5000/user?email=${email}`);
                 const ispasswordOk = password == res.data.password
-                const user = res.data;
+                const user = res?.data;
+                console.log("Authorize user from backend:", user)
 
-                console.log("From backend:", user);
+                console.log("From backend:", user.data);
 
                 if (ispasswordOk) {
                     return {
                         id: user._id.toString(),
                         name: user.name,
                         email: user.email,
+                        role: user?.role
                     };
                 }
                 return null;
@@ -37,16 +39,19 @@ export const authOption = {
             if (user) {
                 token.name = user.name;
                 token.email = user.email;
+                token.role = user.role;
             }
+            // fallback: keep existing token.role
             return token;
         },
+
         async session({ session, token }) {
-            if (token) {
-                session.user.name = token.name;
-                session.user.email = token.email;
-            }
+            session.user.name = token.name;
+            session.user.email = token.email;
+            session.user.role = token.role; // ✅ make sure token.role exists
             return session;
         }
+
     }
 
 }

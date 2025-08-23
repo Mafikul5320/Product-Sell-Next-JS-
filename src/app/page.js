@@ -9,7 +9,6 @@ export default async function Home() {
   return (
     <div>
       <HeroSection />
-      <span className="flex justify-center font-bold text-xl">{JSON.stringify(session)}</span>
       <ProductPage />
 
     </div>
