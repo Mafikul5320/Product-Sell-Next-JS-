@@ -2,6 +2,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation';
 import React, { useState } from 'react'
+import LoginButton from './LoginButton';
 
 export default function Navber() {
     const pathname = usePathname();
@@ -34,14 +35,15 @@ export default function Navber() {
                     </div>
 
                     {/* Login Button */}
-                    <div className="hidden md:block">
+                    {/* <div className="hidden md:block">
                         <Link
                             href="/login"
                             className="bg-blue-600 text-white px-5 py-2 rounded-full shadow hover:bg-blue-700 transition"
                         >
                             Login
                         </Link>
-                    </div>
+                    </div> */}
+                    <LoginButton/>
 
                     {/* Mobile Menu Button */}
                     <button
