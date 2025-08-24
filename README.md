@@ -6,7 +6,7 @@ A simple product management app built with Next.js 15 (App Router) and NextAuth.
 
 Landing page with Navbar, Hero, Products, Footer
 
-Login with NextAuth (Google / Credentials)
+Login with NextAuth ( Credentials)
 
 Product list & details (public)
 
@@ -30,18 +30,9 @@ MongoDB or Mock JSON (data storage)
 
 Clone repo & install packages:
 
-git clone https://github.com/your-username/nextjs-product-app.git
+git clone https://github.com/Mafikul5320/Product-Sell-Next-JS-.git
 cd nextjs-product-app
 npm install
-
-
-Add .env.local:
-
-NEXTAUTH_SECRET=your-secret
-NEXTAUTH_URL=http://localhost:3000
-GOOGLE_CLIENT_ID=xxxx
-GOOGLE_CLIENT_SECRET=xxxx
-MONGO_URI=mongodb://localhost:27017/products
 
 
 Run dev server:
@@ -49,7 +40,7 @@ Run dev server:
 npm run dev
 
 
-Open 👉 http://localhost:3000
+Open 👉https://first-next-js-ruby.vercel.app
 
 📂 Pages
 
