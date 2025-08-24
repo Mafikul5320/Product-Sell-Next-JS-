@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+🛍️ Next.js 15 Product App
 
-## Getting Started
+A simple product management app built with Next.js 15 (App Router) and NextAuth.js. Users can browse products publicly and add new products after logging in.
 
-First, run the development server:
+🚀 Features
 
-```bash
+Landing page with Navbar, Hero, Products, Footer
+
+Login with NextAuth (Google / Credentials)
+
+Product list & details (public)
+
+Add Product (protected) – only for logged-in users
+
+Redirect unauthenticated users to login
+
+🛠️ Tech Stack
+
+Next.js 15 (App Router)
+
+NextAuth.js (authentication)
+
+Tailwind CSS (styling)
+
+API Routes / Express.js (backend)
+
+MongoDB or Mock JSON (data storage)
+
+⚙️ Setup
+
+Clone repo & install packages:
+
+git clone https://github.com/your-username/nextjs-product-app.git
+cd nextjs-product-app
+npm install
+
+
+Add .env.local:
+
+NEXTAUTH_SECRET=your-secret
+NEXTAUTH_URL=http://localhost:3000
+GOOGLE_CLIENT_ID=xxxx
+GOOGLE_CLIENT_SECRET=xxxx
+MONGO_URI=mongodb://localhost:27017/products
+
+
+Run dev server:
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Open 👉 http://localhost:3000
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+📂 Pages
 
-## Learn More
+/ → Landing page
 
-To learn more about Next.js, take a look at the following resources:
+/login → Login with NextAuth
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+/products → Product list
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+/products/[id] → Product details
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+/dashboard/add-product → Protected (add new product)
